@@ -1,0 +1,21 @@
+/*
+
+primary: #fcf4ee
+secondary: #900020
+
+text: #000000
+details: #E9DDD4 -> border, etc
+
+*/
+
+.container {
+    margin-top: 32px;
+    padding: 32px;
+    background:  #fcf4ee;
+    border-radius: 24px;
+
+    position: absolute;
+    width: 800px;
+    left: 50%;
+    transform: translate(-50%);
+}

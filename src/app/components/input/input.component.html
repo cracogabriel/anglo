@@ -1,0 +1,4 @@
+<div class="input-container">
+    <label *ngIf="label">{{label}}</label>
+    <input [value]="value" (change)="handleChange($event)" [ngStyle]="{'width': width, 'height': height, 'background-color': backgroundColor, 'border-radius': borderRadius}"/>
+</div>

@@ -1,0 +1,33 @@
+/*
+
+primary: #fcf4ee
+secondary: #900020
+
+text: #000000
+details: #fcf4ee -> border, etc
+
+*/
+
+.header {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 24px;
+    height: 50px;
+    background-color: #fcf4ee;
+    border-bottom: 2px solid #E9DDD4;
+}
+
+nav {   
+    margin-left: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+a {
+    text-decoration: none;
+    font-size: 20px;
+    height: auto;
+}

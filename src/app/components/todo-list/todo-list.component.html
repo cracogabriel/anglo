@@ -1,0 +1,12 @@
+
+<div class="container">
+    <h1>Angulo</h1>
+    <app-first-component [name]="foo"/>
+    <app-input [label]="'sorriso ronaldo'" (onChange)="onChange($event)" [value]="text"/>
+    <ul>
+      <li *ngFor="let todo of todos">{{todo}} <app-button (click)="removeToDo(todo)" [label]="'remove'"/></li>
+    </ul>
+    <app-button (click)="submitToDo()" [label]="'mandar todo para a lista'" [disabled]="!text"/>
+    <app-button (click)="mandarSalve()" [label]="'mandar salve'"/>
+    <h2 *ngIf="isShowingSalve">salve!</h2>
+  </div>
