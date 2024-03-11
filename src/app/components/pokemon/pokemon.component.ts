@@ -22,7 +22,6 @@ export class PokemonComponent {
       .get<Pokemon>(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
       .subscribe((response) => {
         this.pokemon = response;
-        console.log(response.sprites);
       });
   }
 

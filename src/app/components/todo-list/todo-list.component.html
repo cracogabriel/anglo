@@ -1,12 +1,11 @@
 
 <div class="container">
-    <h1>Angulo</h1>
-    <app-first-component [name]="foo"/>
-    <app-input [label]="'sorriso ronaldo'" (onChange)="onChange($event)" [value]="text"/>
+    <h1>To-do list</h1>
+    <form (ngSubmit)="submitToDo()" [formGroup]="todoForm">
+      <input formControlName="todo">
+      <button type="submit" accesskey="enter">enviar</button>
+    </form>
     <ul>
-      <li *ngFor="let todo of todos">{{todo}} <app-button (click)="removeToDo(todo)" [label]="'remove'"/></li>
+      <li *ngFor="let todo of todos"> <button class="remove-button" (click)="removeToDo(todo)">X</button> <p>{{todo}}</p></li>
     </ul>
-    <app-button (click)="submitToDo()" [label]="'mandar todo para a lista'" [disabled]="!text"/>
-    <app-button (click)="mandarSalve()" [label]="'mandar salve'"/>
-    <h2 *ngIf="isShowingSalve">salve!</h2>
   </div>

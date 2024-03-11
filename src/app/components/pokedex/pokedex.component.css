@@ -1,6 +1,17 @@
 .container {
-    background-color: beige;
     max-width: 100%;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+label {
+ padding-top: 8px;
+ font-size: 18px;
+ font-weight: 700;
 }
 
 ul {
@@ -12,7 +23,7 @@ ul {
 }
 
 li {
-    background-color: darkgrey;
+    background-color: #fcf4ee;
     border-radius: 8px;
     width: 180px;
     height: 180px;

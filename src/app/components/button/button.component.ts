@@ -10,6 +10,7 @@ import { Component, Input } from '@angular/core';
 export class ButtonComponent {
   @Input() label: string = 'Click';
   @Input() disabled: boolean = false;
+  @Input() type: string = 'button';
 
   class = `button ${this.disabled ? 'disabled' : ''}`;
 }
