@@ -1,6 +1,27 @@
-<div *ngIf="pokemon">
-    <h1>{{pokemon.name}}</h1>
-    <img [src]="pokemon.sprites.other['official-artwork'].front_default"/>
-    <img [src]="pokemon.sprites.front_shiny"/>
-    <img [src]="pokemon.sprites.back_shiny"/>
+<div *ngIf="pokemon" class="container">
+  <div class="sprites">
+    <div
+      [style]="'background-color: '.concat(containerBackground)"
+      class="pokemon-container"
+    >
+      <img
+        [src]="pokemon.sprites.other['official-artwork'].front_default"
+        class="pokemon-image"
+      />
+      <label>default</label>
+    </div>
+    <div
+      [style]="'background-color: '.concat(containerBackground)"
+      class="pokemon-container"
+    >
+      <img
+        [src]="pokemon.sprites.other['official-artwork'].front_shiny"
+        class="pokemon-image"
+      />
+      <label>shiny</label>
+    </div>
+  </div>
+  <div class="pokemon-data-container">
+    <h1>{{ pokemon.name }}</h1>
+  </div>
 </div>

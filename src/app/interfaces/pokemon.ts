@@ -8,6 +8,11 @@ export interface Pokemon {
   sprites: PokemonSprite;
 }
 
+export interface PokemonColor {
+  id: number;
+  name: string;
+}
+
 export interface PokemonSprite {
   back_default: string;
   back_female: string | null;
