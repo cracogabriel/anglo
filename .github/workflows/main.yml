@@ -5,18 +5,6 @@ on:
     branches: [main]
 
 jobs:
-  build:
-    name: Building app
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: "18.15.0"
-
   deploy:
     needs: build
     runs-on: ubuntu-latest
