@@ -17,7 +17,7 @@ jobs:
           github_access_token: ${{ secrets.GITHUB_TOKEN }}
           build_configuration: production
           base_href: /anglo/
-          deploy_branch: master
+          deploy_branch: main
           angular_dist_build_folder: dist/anglo/browser
 
 permissions:
