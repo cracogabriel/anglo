@@ -1,12 +1,3 @@
-/*
-
-primary: #fcf4ee
-secondary: #900020
-
-text: #000000
-details: #fcf4ee -> border, etc
-
-*/
 
 .header {
     display: flex;
@@ -14,9 +5,9 @@ details: #fcf4ee -> border, etc
     flex-direction: row;
     align-items: center;
     padding: 0 24px;
-    height: 50px;
-    background-color: #fcf4ee;
-    border-bottom: 2px solid #E9DDD4;
+    height: 80px;
+    background-color: #050505;
+    box-shadow: rgba(999, 999, 999, 0.09) 0px 7px 29px 0px;
 }
 
 nav {   

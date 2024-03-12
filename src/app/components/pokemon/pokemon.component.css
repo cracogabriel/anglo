@@ -1,0 +1,47 @@
+.container {
+    display: flex;
+    width: 100%;
+    flex: 1;
+    background-color: #050505;
+    margin-top: 16px;
+    padding: 32px;
+    flex-wrap: wrap-reverse;
+    box-shadow: rgba(999, 999, 999, 0.09) 0px 10px 50px 0px; 
+
+}
+
+.sprites {
+    display:flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.pokemon-image {
+    width: 200px;
+    height: 200px;
+}
+
+.pokemon-container {
+    padding: 20px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    label {
+        color: white;
+        text-shadow: 2px 2px 0 black;
+    }
+}
+
+.pokemon-data {
+    display: flex;
+
+  
+}
+
+.pokemon-data-container {
+    display: flex;
+    padding: 32px;
+}

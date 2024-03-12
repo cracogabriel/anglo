@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { LocalStorageService } from './local-storage.service';
+import { Todo } from '../interfaces/todo';
 
 const LOCAL_STORAGE_TODO_KEY = '@todos';
 
@@ -9,19 +10,19 @@ const LOCAL_STORAGE_TODO_KEY = '@todos';
 export class ListService {
   constructor(private localStorageService: LocalStorageService) {}
 
-  todos: Array<string> = JSON.parse(
+  todos: Array<Todo> = JSON.parse(
     this.localStorageService.get(LOCAL_STORAGE_TODO_KEY) ?? '[]'
   );
 
-  removeTodo(todoToRemove: string) {
-    this.todos = this.todos.filter((todo) => todo !== todoToRemove);
+  removeTodo(id: number) {
+    this.todos = this.todos.filter((todo) => todo.id !== id);
     this.localStorageService.set(
       LOCAL_STORAGE_TODO_KEY,
       JSON.stringify(this.todos)
     );
   }
 
-  addTodo(todo: string) {
+  addTodo(todo: Todo) {
     this.todos.push(todo);
     this.localStorageService.set(
       LOCAL_STORAGE_TODO_KEY,

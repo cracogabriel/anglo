@@ -1,4 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'Rubik';
+    src: url('/assets/fonts/Rubik/Rubik-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('/assets/fonts/Rubik/Rubik-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('/assets/fonts/Rubik/Rubik-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+body{
+    background-color: #111111;
+}
+
 html, body, div, span, h1 {
 	margin: 0;
 	padding: 0;
@@ -10,7 +34,27 @@ ol, ul {
 	list-style: none;
 }
 
+button, input {
+    background-color: #050505;
+    border: 1px solid #343434;
+    padding: 8px 12px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: auto;
+}
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+
+
+* {
+	font-family: 'Rubik';
+    color: white;
 }
