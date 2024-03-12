@@ -1,11 +1,22 @@
-
 <div class="container">
-    <h1>To-do list</h1>
-    <form (ngSubmit)="submitToDo()" [formGroup]="todoForm">
-      <input formControlName="todo">
-      <button type="submit" accesskey="enter">enviar</button>
-    </form>
-    <ul>
-      <li *ngFor="let todo of todos"> <button class="remove-button" (click)="removeToDo(todo)">X</button> <p>{{todo}}</p></li>
-    </ul>
-  </div>
+  <h1>To-do list</h1>
+  <form (ngSubmit)="submitToDo()" [formGroup]="todoForm">
+    <input formControlName="name" />
+    <input formControlName="expires_in" type="date" />
+    <button type="submit" accesskey="enter">enviar</button>
+  </form>
+
+  <div class="separator"></div>
+
+  <ul>
+    <li *ngFor="let todo of todos">
+      <button class="remove-button" (click)="removeToDo(todo.id)">X</button>
+      <div class="todo-content">
+        <p>{{ todo.name }}</p>
+        <label *ngIf="todo.expires_in">
+          {{ formatDate(todo.expires_in) }}
+        </label>
+      </div>
+    </li>
+  </ul>
+</div>

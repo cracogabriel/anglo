@@ -2,15 +2,18 @@
     display: flex;
     width: 100%;
     flex: 1;
-    background-color: #fcf4ee;
+    background-color: #050505;
     margin-top: 16px;
     padding: 32px;
     flex-wrap: wrap-reverse;
+    box-shadow: rgba(999, 999, 999, 0.09) 0px 10px 50px 0px; 
+
 }
 
 .sprites {
     display:flex;
     flex-direction: column;
+    gap: 8px;
 }
 
 .pokemon-image {

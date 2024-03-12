@@ -23,10 +23,12 @@ ul {
 }
 
 li {
-    background-color: #fcf4ee;
+    background-color: #050505;
     border-radius: 8px;
     width: 180px;
     height: 180px;
+    box-shadow: rgba(999, 999, 999, 0.09) 0px 2px 10px 0px; 
+
 }
 
 img {
