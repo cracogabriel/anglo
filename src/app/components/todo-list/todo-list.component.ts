@@ -8,7 +8,6 @@ import { FormBuilder } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Todo } from '../../interfaces/todo';
 import { ModalComponent } from '../modal/modal.component';
-import { SvgIconComponent, provideAngularSvgIcon } from 'angular-svg-icon';
 
 interface FormData {
   id?: number | null;
@@ -26,7 +25,6 @@ interface FormData {
     ButtonComponent,
     ReactiveFormsModule,
     ModalComponent,
-    SvgIconComponent,
   ],
   templateUrl: './todo-list.component.html',
   styleUrl: './todo-list.component.css',

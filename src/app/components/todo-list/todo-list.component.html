@@ -27,8 +27,8 @@
           </button>
         </div>
 
-        <label *ngIf="todo.expires_in">
-          {{ formatDate(todo.expires_in) }}
+        <label *ngIf="todo.expires_in" style="font-size: 10px">
+          Expira em: {{ formatDate(todo.expires_in) }}
         </label>
         <p class="description">{{ todo.description }}</p>
       </div>
