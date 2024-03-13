@@ -76,5 +76,77 @@ li:hover{
     height: fit-content;
     gap: 4px;
     justify-content: center;
-    padding-right: 20px;
+    width: 100%;
+    padding-right: 8px
+}
+
+.title-container {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.plus-icon {
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 28px;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 24px;
+    border: 2px solid white;
+}
+
+form {
+    display: flex;
+    gap: 12px;
+    flex-direction: column;
+
+    textarea{
+        height: 200px
+    };
+
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    label {
+        font-size: 12px;
+    }
+}
+
+textarea{
+    resize: none;
+}
+
+.name {
+    font-weight: bold;
+}
+
+.description {
+    margin-top: 8px;
+    font-weight: 500;
+    font-size: 14px;
+
+    width: 100%; 
+
+    -ms-word-break: break-all;
+    word-break: break-all;
+    white-space: pre-wrap
+}
+
+.edit-button {
+    border: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 24px;
+    color: #ffffff;
+    margin-left: auto;
 }

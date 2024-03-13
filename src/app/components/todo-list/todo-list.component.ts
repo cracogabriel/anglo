@@ -1,22 +1,32 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { ListService } from '../../services/list.service';
-import { NgIf, NgFor } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { ButtonComponent } from '../button/button.component';
 import { FirstComponentComponent } from '../first-component/first-component.component';
 import { InputComponent } from '../input/input.component';
 import { FormBuilder } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Todo } from '../../interfaces/todo';
+import { ModalComponent } from '../modal/modal.component';
+import { SvgIconComponent, provideAngularSvgIcon } from 'angular-svg-icon';
+
+interface FormData {
+  id?: number | null;
+  name: string;
+  expires_in: Date | null;
+  description: string | null;
+}
 @Component({
   selector: 'app-todo-list',
   standalone: true,
   imports: [
+    CommonModule,
     FirstComponentComponent,
     InputComponent,
     ButtonComponent,
-    NgIf,
-    NgFor,
     ReactiveFormsModule,
+    ModalComponent,
+    SvgIconComponent,
   ],
   templateUrl: './todo-list.component.html',
   styleUrl: './todo-list.component.css',
@@ -28,8 +38,11 @@ export class TodoListComponent {
   ) {
     this.todos = this.listService.todos;
   }
+  @ViewChild(ModalComponent) modal!: ModalComponent;
+
   todos: Todo[];
-  todoForm = this.formBuilder.group({
+  todoForm = this.formBuilder.group<FormData>({
+    id: null,
     name: '',
     expires_in: null,
     description: null,
@@ -57,18 +70,32 @@ export class TodoListComponent {
       ? new Date(date.getTime() + offset * 3600 * 1000)
       : null;
 
-    this.listService.addTodo({
-      id: new Date().getTime(),
+    const todo = {
+      id: this.todoForm.value.id ?? new Date().getTime(),
       name: this.todoForm.value.name,
       expires_in: userDate,
       description: this.todoForm.value.description,
-    });
+    };
+
+    if (this.todoForm.value.id) this.listService.replace(todo);
+    else this.listService.addTodo(todo);
     this.todos = this.listService.todos;
     this.todoForm.reset();
+    this.modal.toggle();
   }
 
   removeToDo(id: number) {
     this.listService.removeTodo(id);
     this.todos = this.listService.todos;
+  }
+
+  handleEdit(todo: Todo) {
+    this.todoForm.setValue({
+      id: todo.id,
+      name: todo.name,
+      description: todo.description ?? null,
+      expires_in: todo.expires_in ?? null,
+    });
+    this.modal.toggle();
   }
 }

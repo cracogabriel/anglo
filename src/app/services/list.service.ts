@@ -22,6 +22,11 @@ export class ListService {
     );
   }
 
+  replace(todo: Todo) {
+    const todoIndex = this.todos.findIndex((t) => t.id === todo.id);
+    this.todos[todoIndex] = todo;
+  }
+
   addTodo(todo: Todo) {
     this.todos.push(todo);
     this.localStorageService.set(
