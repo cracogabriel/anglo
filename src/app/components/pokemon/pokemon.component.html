@@ -1,7 +1,12 @@
 <div *ngIf="pokemon" class="container">
+  <div class="pokemon-data-container">
+    <h1>{{ pokemon.name }}</h1>
+  </div>
   <div class="sprites">
     <div
-      [style]="'background-color: '.concat(containerBackground)"
+      [style]="
+        'background-color: '.concat(getPokemonColor(pokemon.types[0].type.name))
+      "
       class="pokemon-container"
     >
       <img
@@ -11,7 +16,9 @@
       <label>default</label>
     </div>
     <div
-      [style]="'background-color: '.concat(containerBackground)"
+      [style]="
+        'background-color: '.concat(getPokemonColor(pokemon.types[0].type.name))
+      "
       class="pokemon-container"
     >
       <img
@@ -20,8 +27,5 @@
       />
       <label>shiny</label>
     </div>
-  </div>
-  <div class="pokemon-data-container">
-    <h1>{{ pokemon.name }}</h1>
   </div>
 </div>

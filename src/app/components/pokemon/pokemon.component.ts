@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Pokemon, PokemonColor } from '../../interfaces/pokemon';
 import { NgIf } from '@angular/common';
+import { getPokemonTypeColor } from '../../utils/pokemon';
 
 @Component({
   selector: 'app-pokemon',
@@ -15,7 +16,6 @@ export class PokemonComponent {
   constructor(private http: HttpClient, private route: ActivatedRoute) {}
 
   pokemon: Pokemon | null = null;
-  containerBackground = 'transparent';
 
   getPokemon() {
     const pokemonName = this.route.snapshot.paramMap.get('name');
@@ -23,16 +23,11 @@ export class PokemonComponent {
       .get<Pokemon>(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
       .subscribe((response) => {
         this.pokemon = response;
-        this.getPokemonColor(response.id);
       });
   }
 
-  getPokemonColor(pokemonId: number) {
-    this.http
-      .get<PokemonColor>(`https://pokeapi.co/api/v2/pokemon-color/${pokemonId}`)
-      .subscribe((response) => {
-        this.containerBackground = response.name;
-      });
+  getPokemonColor(pokemonType: string) {
+    return getPokemonTypeColor(pokemonType);
   }
 
   ngOnInit() {

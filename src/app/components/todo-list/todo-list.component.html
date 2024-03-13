@@ -30,7 +30,9 @@
         <label *ngIf="todo.expires_in" style="font-size: 10px">
           Expira em: {{ formatDate(todo.expires_in) }}
         </label>
-        <p class="description">{{ todo.description }}</p>
+        <p class="description" style="width: 90%">
+          {{ todo.description }}
+        </p>
       </div>
     </li>
   </ul>

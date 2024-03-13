@@ -105,10 +105,20 @@ form {
     display: flex;
     gap: 12px;
     flex-direction: column;
+    padding: 12px;
+
+    input {
+        border-radius: 8px
+    }
 
     textarea{
+        border-radius: 8px;
         height: 200px
     };
+
+    button {
+        border-radius: 8px;
+    }
 
 }
 

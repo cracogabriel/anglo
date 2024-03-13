@@ -6,6 +6,15 @@ export interface Pokemon {
   order: number;
   weight: number;
   sprites: PokemonSprite;
+  types: PokemonType[];
+}
+
+export interface PokemonType {
+  slot: number;
+  type: {
+    name: string;
+    url: string;
+  };
 }
 
 export interface PokemonColor {
